@@ -1,4 +1,4 @@
-import ChangePassword from "./changepassword";
+import ChangePassword from "./ChangePassword";
 
  export const metadata ={
   title: "Change Password",

@@ -33,8 +33,8 @@ export default function ChangePassword() {
     },
     onSubmit(values) {
       dispatch(changePassword(values))
-      .then(res => {
-        if(res.payload.data.message === "success"){
+      .then(res => {        
+        if(res.payload.message === "success"){
             toast.success("Password changed correctly");
             router.push('/Login');
         }
