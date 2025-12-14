@@ -52,11 +52,12 @@ export default function Signup() {
     onSubmit(values) {
       dispatch(signup(values))
       .then(res => {
-        if(res.payload?.data?.message === "success"){
+        console.log(res);
+        if(res.payload?.message === "success"){
           toast.success("Account has created successfully");
           router.push('/Login');
         } else {
-          toast.error(res.payload?.response?.data?.error);
+          toast.error("Email Already Exists");
         }
       })
     },

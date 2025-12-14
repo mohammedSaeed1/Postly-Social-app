@@ -7,15 +7,15 @@ import DoneIcon from '@mui/icons-material/Done';
 import {theme} from '@/theme/theme';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
-const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+const getHeaders = () => ({
+  token: localStorage.getItem("token")
+});
 
 
 export const changePassword = createAsyncThunk('userSlice/changePassword',async (values)=>{  
   
     const response = await axios.patch(`https://linked-posts.routemisr.com/users/change-password`,values,{
-      headers: {
-        token
-      }
+      headers: getHeaders()
     });
     return response.data;
 })
@@ -23,9 +23,7 @@ export const changePassword = createAsyncThunk('userSlice/changePassword',async 
 export const getUserData = createAsyncThunk('userSlice/getUserData',async _=>{  
   
     const response = await axios.get(`https://linked-posts.routemisr.com/users/profile-data`,{
-      headers: {
-        token
-      }
+      headers: getHeaders()
     });
     return response.data;
 })
@@ -33,9 +31,7 @@ export const getUserData = createAsyncThunk('userSlice/getUserData',async _=>{
 export const uploadPhoto = createAsyncThunk('userSlice/uploadPhoto',async (formData)=>{  
   
     const response = await axios.put(`https://linked-posts.routemisr.com/users/upload-photo`,formData,{
-      headers: {
-        token
-      }
+      headers: getHeaders()
     });
     return response.data;
 })
@@ -90,7 +86,7 @@ const userSlice = createSlice({
         state.isLoading = true;
       })
       builder.addCase(signup.rejected , (state) => {
-        state.isLoading = true;
+        state.isLoading = false;
       })
 
     //upload photo
