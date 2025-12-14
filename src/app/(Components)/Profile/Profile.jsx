@@ -163,7 +163,7 @@ export default function Profile() {
           </Grid>
 
           {/* ================= RIGHT SIDE :: POSTS ================= */}
-          <Grid item size={{xs:12 , md:7}}>
+          <Grid item size={{xs:12 , md:7}} sx={{mb:"100px"}}>
             <CreatePost />
             {isLoading ? (
               <Loading />
