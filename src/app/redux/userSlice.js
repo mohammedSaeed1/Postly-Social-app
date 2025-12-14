@@ -6,6 +6,7 @@ import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import DoneIcon from '@mui/icons-material/Done';
 import {theme} from '@/theme/theme';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { getAllPosts } from './postsSlice';
 
 const getHeaders = () => ({
   token: localStorage.getItem("token")
@@ -35,9 +36,10 @@ export const uploadPhoto = createAsyncThunk('userSlice/uploadPhoto',async (formD
     return response.data;
 })
 
-export const login = createAsyncThunk('userSlice/login',async (values)=>{  
+export const login = createAsyncThunk('userSlice/login',async (values , {dispatch})=>{  
   
     const response = await axios.post(`https://linked-posts.routemisr.com/users/signin`,values);
+    dispatch(getAllPosts());
     return response.data;
 })
 export const signup = createAsyncThunk('userSlice/signup',async (values)=>{  
