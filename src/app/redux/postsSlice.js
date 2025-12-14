@@ -82,7 +82,7 @@ export const postsSlice = createSlice({
     },
     setCurrentPage: (state, action) => {
       state.currentPage = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
 
