@@ -1,4 +1,4 @@
-import Login from '@/app/Login/page.js';
+import Login from '@/app/(Components)/Login/page.js';
 export default function ProtectedRoute(props) {
 
 const token = typeof window !== 'undefined' ? localStorage.getItem("token") : null;

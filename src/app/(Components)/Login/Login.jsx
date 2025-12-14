@@ -34,7 +34,6 @@ export default function Login() {
     onSubmit(values) {
       dispatch(login(values))
       .then(res => {
-        console.log(res);
         if(res.payload?.message === "success"){
           toast.success("Login is successfully");
           router.push('/');          

@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllPosts } from "./redux/postsSlice";
 import { useEffect, useRef } from "react";
 import Container from "@mui/material/Container";
-import PostCard from "./PostCard/PostCard";
+import PostCard from "./(Components)/PostCard/PostCard";
 import { Grid } from "@mui/material";
 import Loading from "./loading";
-import CreatePost from "./CreatePost/CreatePost";
+import CreatePost from "./(Components)/CreatePost/CreatePost";
 import { getUserData } from "./redux/userSlice";
 
 export default function Home() {

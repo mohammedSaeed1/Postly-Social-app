@@ -7,8 +7,8 @@ import { Toaster } from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import { theme } from "../theme/theme";
 import { store } from "./redux/store";
-import Navbar from "./Navbar/Navbar";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
+import Navbar from "./(Components)/Navbar/Navbar";
+import ProtectedRoute from "./(Components)/ProtectedRoute/ProtectedRoute";
 
 export default function Providers({ children }) {
   const pathname = usePathname();

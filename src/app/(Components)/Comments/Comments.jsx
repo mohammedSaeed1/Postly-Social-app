@@ -5,7 +5,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
-import { updateComment, deleteComment } from '../redux/commentsSlice';
+import { updateComment, deleteComment } from '../../redux/commentsSlice';
 import { useState } from "react";
 
 export default function Comments({ currentUserId }) {
