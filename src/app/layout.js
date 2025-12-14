@@ -1,14 +1,20 @@
-import RootLayout from './layout';
+import "./globals.css";
+import Providers from "./providers";
 
- export const metadata = {
-  title : "Postly - Social Media App",
-  description : "Share your thoughts and update , delete your posts and comments and Add Your Profile Picture",
-  creator: "Mohamed Saeed",
-  keywords: ["Social Media" , "Post" , "Comment"],
- }
+export const metadata = {
+  title: "Postly - Social Media App",
+  description: "Add your Posts & thoughts and you can add Comment , update and delete Post or Comment also User can add Profile Picture",
+  keywords:["Post" , "Comment" , "Social APP"],
+};
 
-export default function layout() {
+export default function RootLayout({ children }) {
   return (
-     <RootLayout/>
-  )
+    <html lang="en">
+      <body>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
+    </html>
+  );
 }

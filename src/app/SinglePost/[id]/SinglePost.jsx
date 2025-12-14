@@ -20,7 +20,7 @@ import CommentInput from '../../CommentInput/CommentInput';
 import Comments from '../../Comments/Comments';
 import { jwtDecode } from 'jwt-decode';
 import { useEffect } from "react";
-import Loading from '@/app/Loading';
+import Loading from '@/app/loading';
 
 
 export default function SinglePost() {

@@ -7,7 +7,7 @@ import { getUserData, uploadPhoto } from "@/app/redux/userSlice";
 import { jwtDecode } from "jwt-decode";
 import CreatePost from "../CreatePost/CreatePost";
 import PostCard from "../PostCard/PostCard";
-import Loading from "../../Loading";
+import Loading from "../loading";
 import { useEffect } from "react";
 
 export default function Profile() {

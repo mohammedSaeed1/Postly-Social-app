@@ -7,12 +7,14 @@ import DoneIcon from '@mui/icons-material/Done';
 import {theme} from '@/theme/theme';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
+const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
 
 export const changePassword = createAsyncThunk('userSlice/changePassword',async (values)=>{  
   
     const response = await axios.patch(`https://linked-posts.routemisr.com/users/change-password`,values,{
       headers: {
-        token: localStorage.getItem("token")
+        token
       }
     });
     return response.data;
@@ -22,7 +24,7 @@ export const getUserData = createAsyncThunk('userSlice/getUserData',async _=>{
   
     const response = await axios.get(`https://linked-posts.routemisr.com/users/profile-data`,{
       headers: {
-        token: localStorage.getItem("token")
+        token
       }
     });
     return response.data;
@@ -32,7 +34,7 @@ export const uploadPhoto = createAsyncThunk('userSlice/uploadPhoto',async (formD
   
     const response = await axios.put(`https://linked-posts.routemisr.com/users/upload-photo`,formData,{
       headers: {
-        token: localStorage.getItem("token")
+        token
       }
     });
     return response.data;
@@ -49,7 +51,7 @@ export const signup = createAsyncThunk('userSlice/signup',async (values)=>{
 })
 
 let initialState ={
-token : localStorage.getItem("token") || "",
+token : typeof window !== 'undefined' ? localStorage.getItem("token") || "" : "",
 userData:null,
 isLoading: false
 }
