@@ -10,7 +10,7 @@ const getHeaders = () => ({
 
 // Get all posts with pagination
 export const getAllPosts = createAsyncThunk('postsSlice/getAllPosts', async (page) => {
-  return await axios.get(`https://linked-posts.routemisr.com/posts?limit=40&page=${page}`, {
+  return await axios.get(`https://linked-posts.routemisr.com/posts?limit=50&page=${page}`, {
     headers: getHeaders()
   });
 });
