@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {    
     dispatch(getUserData());
     dispatch(getAllPosts(lastPage)); 
-  }, [localStorage.getItem("lastPage")]);
+  }, [lastPage]);
 
 
   // Infinite Scroll Observer

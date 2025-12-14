@@ -36,10 +36,8 @@ export const uploadPhoto = createAsyncThunk('userSlice/uploadPhoto',async (formD
     return response.data;
 })
 
-export const login = createAsyncThunk('userSlice/login',async (values , {dispatch})=>{  
-  
+export const login = createAsyncThunk('userSlice/login',async (values , {dispatch})=>{        
     const response = await axios.post(`https://linked-posts.routemisr.com/users/signin`,values);
-    dispatch(getAllPosts());
     return response.data;
 })
 export const signup = createAsyncThunk('userSlice/signup',async (values)=>{  

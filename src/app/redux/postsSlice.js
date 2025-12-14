@@ -69,7 +69,7 @@ const initialState = {
   allPosts: [],
   post: null,
   isLoading: false,
-  lastPage: typeof window !== 'undefined' ? localStorage.getItem("lastPage") || 1 : 1,
+  lastPage: typeof window !== 'undefined' ? localStorage.getItem("lastPage") : 0,
   currentPage: 0
 };
 
