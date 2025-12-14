@@ -35,6 +35,7 @@ export default function Login() {
       dispatch(login(values))
       .then(res => {
         if(res.payload?.message === "success"){
+          console.log(res);
           toast.success("Login is successfully");
           router.push('/');          
         } else {
