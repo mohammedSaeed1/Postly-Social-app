@@ -11,7 +11,6 @@ const getHeaders = () => ({
   token: localStorage.getItem("token")
 });
 
-
 export const changePassword = createAsyncThunk('userSlice/changePassword',async (values)=>{  
   
     const response = await axios.patch(`https://linked-posts.routemisr.com/users/change-password`,values,{
